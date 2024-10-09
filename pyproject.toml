@@ -1,0 +1,74 @@
+[tool.black]
+line-length = 240
+
+[build-system]
+requires = ["setuptools>=42", "wheel", "setuptools_scm[tomli]>=6.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "<your-package-name>"
+version = "0.1.0"
+authors = [
+    { name = "Your Name", email = "youremail@123.com" },
+]
+description = "<Your Description>"
+readme = "Your Readme"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.1.2",
+]
+
+[project.optional-dependencies]
+video = [
+    "decord"
+]
+
+[tool.setuptools.packages.find]
+include = ["*"]
+exclude = [
+    "assets*",
+    "benchmark*",
+    "docs",
+    "dist*",
+    "playground*",
+    "scripts*",
+    "tests*",
+    "checkpoints*",
+    "project_checkpoints*",
+    "debug_checkpoints*",
+    "mlx_configs*",
+    "wandb*",
+    "notebooks*",
+    "logs*",
+]
+
+[tool.wheel]
+exclude = [
+    "assets*",
+    "benchmark*",
+    "docs",
+    "dist*",
+    "playground*",
+    "scripts*",
+    "tests*",
+    "checkpoints*",
+    "project_checkpoints*",
+    "debug_checkpoints*",
+    "mlx_configs*",
+    "wandb*",
+    "notebooks*",
+    "logs*",
+]
+
+[project.scripts]
+cli = "package_name.__main__:entry-point"
+
+[project.urls]
+Homepage = "https://xxx.github.io"
+Repository = "https://github.com/xxx/lmms-eval"
