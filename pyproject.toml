@@ -6,13 +6,13 @@ requires = ["setuptools>=42", "wheel", "setuptools_scm[tomli]>=6.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "<your-package-name>"
+name = "foo"
 version = "0.1.0"
 authors = [
     { name = "Your Name", email = "youremail@123.com" },
 ]
-description = "<Your Description>"
-readme = "Your Readme"
+description = "A python template"
+readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -21,54 +21,29 @@ classifiers = [
 requires-python = ">=3.8"
 license = { text = "MIT" }
 dependencies = [
-    "torch>=2.1.2",
 ]
 
 [project.optional-dependencies]
-video = [
-    "decord"
+opt = [
 ]
 
 [tool.setuptools.packages.find]
+where = ["src"]
 include = ["*"]
 exclude = [
-    "assets*",
-    "benchmark*",
-    "docs",
-    "dist*",
-    "playground*",
-    "scripts*",
-    "tests*",
-    "checkpoints*",
-    "project_checkpoints*",
-    "debug_checkpoints*",
-    "mlx_configs*",
-    "wandb*",
-    "notebooks*",
-    "logs*",
+    "test"
 ]
 
 [tool.wheel]
 exclude = [
-    "assets*",
-    "benchmark*",
-    "docs",
-    "dist*",
-    "playground*",
-    "scripts*",
-    "tests*",
-    "checkpoints*",
-    "project_checkpoints*",
-    "debug_checkpoints*",
-    "mlx_configs*",
-    "wandb*",
-    "notebooks*",
-    "logs*",
+    "test"
 ]
 
 [project.scripts]
-cli = "package_name.__main__:entry-point"
+foo = "foo.__main__:main"
+foo-func1 = "foo.__main__:func1"
+foo-func2 = "foo.__main__:func2"
 
 [project.urls]
 Homepage = "https://xxx.github.io"
-Repository = "https://github.com/xxx/lmms-eval"
+Repository = "https://github.com/xxx/yyy"
